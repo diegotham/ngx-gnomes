@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { StoreModule } from '@ngrx/store';
 import {
@@ -32,6 +33,7 @@ import { GnomeModule } from './gnome/gnome.module';
         CoreModule,
         GnomeModule,
         AppRoutingModule,
+        FlexLayoutModule,
         StoreModule.forRoot(reducers, { metaReducers }),
         StoreRouterConnectingModule.forRoot({
           stateKey: 'router',

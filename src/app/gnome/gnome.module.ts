@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { GnomeListComponent } from './containers/gnome-list/gnome-list.component';
+import { GnomeRoutingModule } from './gnome-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
+    GnomeRoutingModule,
   ],
   declarations: [GnomeListComponent],
 })
