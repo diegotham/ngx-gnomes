@@ -1,5 +1,10 @@
 # Brastlewark
 
+Run 'ng s', and you'll see:
+
+![List](https://github.com/diegotham/ngx-gnomes/blob/master/brastlewark1.png)
+![Item](https://github.com/diegotham/ngx-gnomes/blob/master/brastlewark2.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
 ## Development server
