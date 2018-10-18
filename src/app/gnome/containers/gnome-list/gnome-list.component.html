@@ -1,3 +1,61 @@
-<p>
-  gnome-list works!
-</p>
+<mat-table #table [dataSource]="dataSource"
+           >
+
+    <!-- Avatar Column -->
+    <ng-container matColumnDef="thumbnail">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let gnome">
+                <img class="thumbnail" (error)="errorHandler($event)"
+                    [src]="gnome.thumbnail"/>
+            </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let gnome">
+            <p class="name text-truncate">
+                {{gnome.name}}
+            </p>
+        </mat-cell>
+    </ng-container>
+
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-xs>Age</mat-header-cell>
+        <mat-cell *matCellDef="let gnome" fxHide fxShow.gt-xs>
+            <p class="age text-truncate">
+                {{gnome.age}}
+            </p>
+        </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Weight</mat-header-cell>
+        <mat-cell *matCellDef="let gnome" fxHide fxShow.gt-sm>
+            <p class="weight text-truncate">
+                {{gnome.weight}}
+            </p>
+        </mat-cell>
+    </ng-container>
+
+    <!-- Height Column -->
+    <ng-container matColumnDef="height">
+        <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Height</mat-header-cell>
+        <mat-cell *matCellDef="let gnome" fxHide fxShow.gt-sm>
+            <p class="height text-truncate">
+                {{gnome.height}}
+            </p>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let gnome; columns: displayedColumns;"
+             class="gnome"
+             (click)="openGnomeInfo(gnome)"
+             >
+    </mat-row>
+</mat-table>
+
+<mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>

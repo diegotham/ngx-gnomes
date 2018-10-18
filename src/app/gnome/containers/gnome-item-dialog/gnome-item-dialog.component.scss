@@ -1,0 +1,38 @@
+
+.gnome-item {
+    .show-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .avatar-box {
+            padding: 10px;
+            margin: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            width: 300px;
+            img {
+                max-width: 200px;
+                border-radius: 20px;
+            }
+        }
+        mat-list {
+            padding: 20px 0px;
+            max-width: 484px;
+            text-align: center;
+        }
+        .list-properties {
+            .title {
+                background-color: teal;
+                color: white;
+                font-size: 18px;
+                padding: 10px;
+            }
+            ul {
+                text-align: left;
+                font-size: 18px;
+            }
+        }
+    }
+}

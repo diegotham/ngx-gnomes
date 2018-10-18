@@ -1,0 +1,41 @@
+<div mat-dialog-content class="gnome-item" fxLayout="column">
+    <div fxFlex>
+            <div class="content mat-white-bg">
+                <div class="show-box"
+                >
+                  <div class="avatar-box">
+                    <img *ngIf="gnome.thumbnail" [src]="gnome.thumbnail">
+                  </div>
+                  <mat-list>
+                      <mat-list-item>Name: {{gnome.name}}</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Age: {{gnome.age}}</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Hair Color: {{gnome.hair_color}} </mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Height: {{gnome.height}}</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Weight: {{gnome.weight}}</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <div  *ngIf="gnome.professions && gnome.professions.length > 0" class="list-properties">
+                        <div class="title">Professions</div>
+                          <ul>
+                            <li *ngFor="let profession of gnome.professions">
+                              {{profession}}
+                            </li>
+                          </ul>
+                      </div>
+                      <div *ngIf="gnome.friends && gnome.friends.length > 0" class="list-properties">
+                          <div class="title">Friends</div>
+                          <ul>
+                            <li *ngFor="let friend of gnome.friends">
+                              {{friend}}
+                            </li>
+                          </ul>
+                      </div>
+                  </mat-list>
+                </div>
+            </div>
+    </div>
+  </div>
+  

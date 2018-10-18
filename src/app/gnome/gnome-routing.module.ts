@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GnomeListComponent } from './containers/gnome-list/gnome-list.component';
+import { GnomesComponent } from './containers/gnomes';
+import { GnomesService } from './services/gnomes.service';
 
 export const routes: Routes = [
-  { path: 'gnomes', component: GnomeListComponent },
+  { path: 'gnomes',
+    component: GnomesComponent,
+    resolve  : {
+      gnomes: GnomesService
+    }
+  },
 ];
 
 @NgModule({
