@@ -20,7 +20,6 @@ export class GnomesComponent implements OnInit, OnDestroy {
         this.gnomesService.onGnomesChanged
             .pipe(takeUntil(this._unsubscribeAll))
                 .subscribe(gnomes => {
-                    console.log('gnomes', gnomes);
                     this.gnomes = gnomes;
                 });
     }

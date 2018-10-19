@@ -81,7 +81,6 @@ export class GnomesService implements Resolve<any> {
             return this._httpClient.get(this.dataUrl)
                     .subscribe((res: any) => {
                         this.gnomes = res.Brastlewark;
-console.log('gnomessss', this.gnomes);
                         this.onGnomesChanged.next(this.gnomes);
                         resolve(this.gnomes);
                     }, reject);
